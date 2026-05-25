@@ -1,0 +1,99 @@
+version: 1
+generated_at: 2026-05-25T13:25:34Z
+internal: []
+trusted:
+  - action: actions/checkout
+    refs:
+      - v3
+      - v4
+    occurrences:
+      v4:
+        .github/workflows/ci.yaml:
+          - jobs.build.steps.[0].uses
+          - jobs.test-setup.steps.[0].uses
+          - jobs.test-setup-latest.steps.[0].uses
+          - jobs.test-setup-macos.steps.[0].uses
+          - jobs.test-setup-windows.steps.[0].uses
+          - jobs.test-setup-self-hosted.steps.[0].uses
+          - jobs.test-empty-build.steps.[0].uses
+          - jobs.test-lint.steps.[0].uses
+          - jobs.test-format.steps.[0].uses
+          - jobs.test-breaking.steps.[0].uses
+          - jobs.test-comment.steps.[0].uses
+          - jobs.test-push.steps.[0].uses
+          - jobs.test-push-token-only.steps.[0].uses
+          - jobs.test-push-unnamed.steps.[0].uses
+          - jobs.test-archive.steps.[0].uses
+          - jobs.test-archive-unnamed.steps.[0].uses
+          - jobs.test-archive-root.steps.[0].uses
+      v3:
+        .github/workflows/dependabot.yaml:
+          - jobs.build.steps.[0].uses
+  - action: actions/github-script
+    refs:
+      - v7
+    occurrences:
+      v7:
+        .github/workflows/ci.yaml:
+          - jobs.test-comment.steps.[3].uses
+  - action: actions/setup-node
+    refs:
+      - v4
+    occurrences:
+      v4:
+        .github/workflows/ci.yaml:
+          - jobs.build.steps.[1].uses
+external:
+  - action: bufbuild/base-workflows/.github/workflows/add-to-project.yaml
+    refs:
+      - main
+    occurrences:
+      main:
+        .github/workflows/add-to-project.yaml:
+          - jobs.call-workflow-add-to-project.uses
+  - action: bufbuild/base-workflows/.github/workflows/emergency-review-bypass.yaml
+    refs:
+      - main
+    occurrences:
+      main:
+        .github/workflows/emergency-review-bypass.yaml:
+          - jobs.approve.uses
+  - action: bufbuild/base-workflows/.github/workflows/notify-approval-bypass.yaml
+    refs:
+      - main
+    occurrences:
+      main:
+        .github/workflows/notify-approval-bypass.yaml:
+          - jobs.approval.uses
+  - action: bufbuild/base-workflows/.github/workflows/pr-title.yaml
+    refs:
+      - main
+    occurrences:
+      main:
+        .github/workflows/pr-title.yaml:
+          - jobs.lint.uses
+local:
+  - path: ./
+    occurrences:
+      .github/workflows/ci.yaml:
+        - jobs.test-setup.steps.[1].uses
+        - jobs.test-setup-latest.steps.[1].uses
+        - jobs.test-setup-macos.steps.[1].uses
+        - jobs.test-setup-windows.steps.[1].uses
+        - jobs.test-setup-self-hosted.steps.[1].uses
+        - jobs.test-empty-build.steps.[1].uses
+        - jobs.test-lint.steps.[2].uses
+        - jobs.test-format.steps.[2].uses
+        - jobs.test-breaking.steps.[2].uses
+        - jobs.test-comment.steps.[2].uses
+        - jobs.test-push.steps.[2].uses
+        - jobs.test-push-token-only.steps.[2].uses
+        - jobs.test-push-unnamed.steps.[2].uses
+        - jobs.test-push-unnamed.steps.[4].uses
+        - jobs.test-push-unnamed.steps.[6].uses
+        - jobs.test-archive.steps.[2].uses
+        - jobs.test-archive-unnamed.steps.[2].uses
+        - jobs.test-archive-unnamed.steps.[4].uses
+        - jobs.test-archive-root.steps.[2].uses
+docker: []
+dynamic: []
