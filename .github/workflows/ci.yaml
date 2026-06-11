@@ -14,9 +14,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '20'
       - name: Build
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           setup_only: true
@@ -43,7 +43,7 @@ jobs:
     env:
       BUF_VERSION: "" # Use the latest version
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           setup_only: true
@@ -53,7 +53,7 @@ jobs:
     if: github.event_name == 'push'
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           setup_only: true
@@ -63,7 +63,7 @@ jobs:
     if: github.event_name == 'push'
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           setup_only: true
@@ -74,7 +74,7 @@ jobs:
     if: false
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           setup_only: true
@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./
         with:
           lint: false
@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/test/v1
           printf 'version: v2\nmodules:\n  - path: proto' > buf.yaml
@@ -114,7 +114,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto
           printf 'version: v2\nmodules:\n  - path: proto' > buf.yaml
@@ -131,7 +131,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto
           printf 'version: v2\nmodules:\n  - path: proto' > buf.yaml
@@ -154,7 +154,7 @@ jobs:
       - test-format
       - test-breaking
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           # Lint skipped, format fails, breaking succeeds
           mkdir -p proto
@@ -171,7 +171,7 @@ jobs:
           push: false
           archive: false
           pr_comment: true
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
             const expects = [
@@ -229,7 +229,7 @@ jobs:
     if: ${{ github.event_name == 'push' }} # --git-metadata is only available on push
     needs: build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/foo/v1
           printf "version: v2\nmodules:\n  - path: proto\n    name: ${BUF_MODULE}\n" > buf.yaml
@@ -248,7 +248,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }} # --git-metadata is only available on push
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/foo/v1
           printf "version: v2\nmodules:\n  - path: proto\n    name: ${BUF_MODULE}\n" > buf.yaml
@@ -267,8 +267,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }} # --git-metadata is only available on push
     steps:
-      - uses: actions/checkout@v4
-        # Test v2 buf.yaml config.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/foo/v1
           printf "version: v2\nmodules:\n  - path: proto\n" > buf.yaml
@@ -321,7 +320,7 @@ jobs:
       - test-push-token-only
       - test-push-unnamed
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/foo/v1
           printf "version: v2\nmodules:\n  - path: proto\n    name: ${BUF_MODULE}\n" > buf.yaml
@@ -343,7 +342,7 @@ jobs:
       - test-push-token-only
       - test-push-unnamed
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p proto/foo/v1
           printf "version: v2\nmodules:\n  - path: proto\n" > buf.yaml
@@ -378,7 +377,7 @@ jobs:
     needs:
       - test-archive
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - run: |
           mkdir -p foo/v1
           printf "version: v2\nname: ${BUF_MODULE}\n" > buf.yaml
