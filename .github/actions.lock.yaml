@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-11T15:37:12Z
+generated_at: 2026-06-15T13:14:28Z
 internal: []
 trusted:
   - action: actions/checkout
@@ -46,30 +46,30 @@ trusted:
 external:
   - action: bufbuild/base-workflows/.github/workflows/add-to-project.yaml
     refs:
-      - main
+      - 936b87d881ecb3b746df8b7e88ae583de5423a07
     occurrences:
-      main:
+      936b87d881ecb3b746df8b7e88ae583de5423a07:
         .github/workflows/add-to-project.yaml:
           - jobs.call-workflow-add-to-project.uses
   - action: bufbuild/base-workflows/.github/workflows/emergency-review-bypass.yaml
     refs:
-      - main
+      - 936b87d881ecb3b746df8b7e88ae583de5423a07
     occurrences:
-      main:
+      936b87d881ecb3b746df8b7e88ae583de5423a07:
         .github/workflows/emergency-review-bypass.yaml:
           - jobs.approve.uses
   - action: bufbuild/base-workflows/.github/workflows/notify-approval-bypass.yaml
     refs:
-      - main
+      - 936b87d881ecb3b746df8b7e88ae583de5423a07
     occurrences:
-      main:
+      936b87d881ecb3b746df8b7e88ae583de5423a07:
         .github/workflows/notify-approval-bypass.yaml:
           - jobs.approval.uses
   - action: bufbuild/base-workflows/.github/workflows/pr-title.yaml
     refs:
-      - main
+      - 936b87d881ecb3b746df8b7e88ae583de5423a07
     occurrences:
-      main:
+      936b87d881ecb3b746df8b7e88ae583de5423a07:
         .github/workflows/pr-title.yaml:
           - jobs.lint.uses
 local:
