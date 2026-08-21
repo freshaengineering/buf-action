@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-15T13:14:28Z
+generated_at: 2026-08-21T11:46:01Z
 internal: []
 trusted:
   - action: actions/checkout
@@ -8,6 +8,40 @@ trusted:
       - f43a0e5ff2bd294095638e18286ca9a3d1956744
     occurrences:
       34e114876b0b11c390a56381ad16ebd13914f8d5:
+        .github/workflows/ci.yaml:
+          - jobs.build.steps.[1].uses
+          - jobs.test-setup.steps.[1].uses
+          - jobs.test-setup-latest.steps.[1].uses
+          - jobs.test-setup-macos.steps.[1].uses
+          - jobs.test-setup-windows.steps.[1].uses
+          - jobs.test-setup-self-hosted.steps.[1].uses
+          - jobs.test-empty-build.steps.[1].uses
+          - jobs.test-lint.steps.[1].uses
+          - jobs.test-format.steps.[1].uses
+          - jobs.test-breaking.steps.[1].uses
+          - jobs.test-comment.steps.[1].uses
+          - jobs.test-push.steps.[1].uses
+          - jobs.test-push-token-only.steps.[1].uses
+          - jobs.test-push-unnamed.steps.[1].uses
+          - jobs.test-archive.steps.[1].uses
+          - jobs.test-archive-unnamed.steps.[1].uses
+          - jobs.test-archive-root.steps.[1].uses
+      f43a0e5ff2bd294095638e18286ca9a3d1956744:
+        .github/workflows/dependabot.yaml:
+          - jobs.build.steps.[1].uses
+  - action: actions/github-script
+    refs:
+      - f28e40c7f34bde8b3046d885e986cb6290c5673b
+    occurrences:
+      f28e40c7f34bde8b3046d885e986cb6290c5673b:
+        .github/workflows/ci.yaml:
+          - jobs.test-comment.steps.[4].uses
+external:
+  - action: step-security/harden-runner
+    refs:
+      - 9af89fc71515a100421586dfdb3dc9c984fbf411
+    occurrences:
+      9af89fc71515a100421586dfdb3dc9c984fbf411:
         .github/workflows/ci.yaml:
           - jobs.build.steps.[0].uses
           - jobs.test-setup.steps.[0].uses
@@ -26,74 +60,38 @@ trusted:
           - jobs.test-archive.steps.[0].uses
           - jobs.test-archive-unnamed.steps.[0].uses
           - jobs.test-archive-root.steps.[0].uses
-      f43a0e5ff2bd294095638e18286ca9a3d1956744:
         .github/workflows/dependabot.yaml:
           - jobs.build.steps.[0].uses
-  - action: actions/github-script
+  - action: step-security/mise-action
     refs:
-      - f28e40c7f34bde8b3046d885e986cb6290c5673b
+      - 2796166110dee826668caddd4bffedae5116e7cd
     occurrences:
-      f28e40c7f34bde8b3046d885e986cb6290c5673b:
+      2796166110dee826668caddd4bffedae5116e7cd:
         .github/workflows/ci.yaml:
-          - jobs.test-comment.steps.[3].uses
-  - action: actions/setup-node
-    refs:
-      - 49933ea5288caeca8642d1e84afbd3f7d6820020
-    occurrences:
-      49933ea5288caeca8642d1e84afbd3f7d6820020:
-        .github/workflows/ci.yaml:
-          - jobs.build.steps.[1].uses
-external:
-  - action: bufbuild/base-workflows/.github/workflows/add-to-project.yaml
-    refs:
-      - 936b87d881ecb3b746df8b7e88ae583de5423a07
-    occurrences:
-      936b87d881ecb3b746df8b7e88ae583de5423a07:
-        .github/workflows/add-to-project.yaml:
-          - jobs.call-workflow-add-to-project.uses
-  - action: bufbuild/base-workflows/.github/workflows/emergency-review-bypass.yaml
-    refs:
-      - 936b87d881ecb3b746df8b7e88ae583de5423a07
-    occurrences:
-      936b87d881ecb3b746df8b7e88ae583de5423a07:
-        .github/workflows/emergency-review-bypass.yaml:
-          - jobs.approve.uses
-  - action: bufbuild/base-workflows/.github/workflows/notify-approval-bypass.yaml
-    refs:
-      - 936b87d881ecb3b746df8b7e88ae583de5423a07
-    occurrences:
-      936b87d881ecb3b746df8b7e88ae583de5423a07:
-        .github/workflows/notify-approval-bypass.yaml:
-          - jobs.approval.uses
-  - action: bufbuild/base-workflows/.github/workflows/pr-title.yaml
-    refs:
-      - 936b87d881ecb3b746df8b7e88ae583de5423a07
-    occurrences:
-      936b87d881ecb3b746df8b7e88ae583de5423a07:
-        .github/workflows/pr-title.yaml:
-          - jobs.lint.uses
+          - jobs.build.steps.[2].uses
 local:
   - path: ./
     occurrences:
       .github/workflows/ci.yaml:
-        - jobs.test-setup.steps.[1].uses
-        - jobs.test-setup-latest.steps.[1].uses
-        - jobs.test-setup-macos.steps.[1].uses
-        - jobs.test-setup-windows.steps.[1].uses
-        - jobs.test-setup-self-hosted.steps.[1].uses
-        - jobs.test-empty-build.steps.[1].uses
-        - jobs.test-lint.steps.[2].uses
-        - jobs.test-format.steps.[2].uses
-        - jobs.test-breaking.steps.[2].uses
-        - jobs.test-comment.steps.[2].uses
-        - jobs.test-push.steps.[2].uses
-        - jobs.test-push-token-only.steps.[2].uses
-        - jobs.test-push-unnamed.steps.[2].uses
-        - jobs.test-push-unnamed.steps.[4].uses
-        - jobs.test-push-unnamed.steps.[6].uses
-        - jobs.test-archive.steps.[2].uses
-        - jobs.test-archive-unnamed.steps.[2].uses
-        - jobs.test-archive-unnamed.steps.[4].uses
-        - jobs.test-archive-root.steps.[2].uses
+        - jobs.test-setup.steps.[2].uses
+        - jobs.test-setup-latest.steps.[2].uses
+        - jobs.test-setup-macos.steps.[2].uses
+        - jobs.test-setup-windows.steps.[2].uses
+        - jobs.test-setup-self-hosted.steps.[2].uses
+        - jobs.test-empty-build.steps.[2].uses
+        - jobs.test-lint.steps.[3].uses
+        - jobs.test-format.steps.[3].uses
+        - jobs.test-breaking.steps.[3].uses
+        - jobs.test-comment.steps.[3].uses
+        - jobs.test-push.steps.[3].uses
+        - jobs.test-push-token-only.steps.[3].uses
+        - jobs.test-push-unnamed.steps.[3].uses
+        - jobs.test-push-unnamed.steps.[5].uses
+        - jobs.test-push-unnamed.steps.[7].uses
+        - jobs.test-archive.steps.[3].uses
+        - jobs.test-archive-unnamed.steps.[3].uses
+        - jobs.test-archive-unnamed.steps.[5].uses
+        - jobs.test-archive-root.steps.[3].uses
 docker: []
 dynamic: []
+nested_floating_deps: []
